@@ -1,0 +1,20 @@
+# Python
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.tox/
+.mypy_cache/
+venv/
+dist/
+.coverage
+build/
+.pytest_cache/
+env/
+*.egg
+develop-eggs/
+Desktop.ini
+.ruff_cache/
+.Python
+.venv/
