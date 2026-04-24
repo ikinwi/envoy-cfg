@@ -88,6 +88,15 @@ class ConfigLoader:
         """Retrieve a config value by key."""
         return self._config.get(key, default)
 
+    def reload(self) -> Dict[str, Any]:
+        """Reload config from disk, discarding any previously loaded values.
+
+        Useful when config files may have changed on disk since the last
+        call to ``load()``, for example in long-running processes.
+        """
+        self._config = {}
+        return self.load()
+
     @property
     def config(self) -> Dict[str, Any]:
         return self._config
