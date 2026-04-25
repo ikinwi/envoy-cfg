@@ -1,33 +1,34 @@
 """envoy-cfg: Lightweight layered environment config management."""
 
-from .auditor import AuditReport, ConfigAuditor
-from .exporter import ConfigExporter
-from .interpolator import interpolate_config
-from .loader import ConfigLoader
-from .merger import ConfigMerger, deep_merge
-from .profiler import ConfigProfiler, ProfileReport
-from .redactor import ConfigRedactor
-from .schema import Schema, SchemaField
-from .snapshot import Snapshot, SnapshotStore
-from .validator import ConfigValidator, ValidationError
-from .watcher import ConfigWatcher
+from envoy_cfg.loader import ConfigLoader
+from envoy_cfg.merger import ConfigMerger, deep_merge
+from envoy_cfg.schema import Schema, SchemaField
+from envoy_cfg.exporter import ConfigExporter
+from envoy_cfg.validator import ConfigValidator, ValidationError
+from envoy_cfg.interpolator import interpolate_config
+from envoy_cfg.auditor import ConfigAuditor
+from envoy_cfg.snapshot import Snapshot, SnapshotStore
+from envoy_cfg.redactor import ConfigRedactor
+from envoy_cfg.profiler import ConfigProfiler
+from envoy_cfg.renderer import ConfigRenderer, RenderError
 
 __all__ = [
-    "AuditReport",
-    "ConfigAuditor",
-    "ConfigExporter",
     "ConfigLoader",
     "ConfigMerger",
-    "ConfigProfiler",
-    "ConfigRedactor",
-    "ConfigValidator",
-    "ConfigWatcher",
-    "ProfileReport",
+    "deep_merge",
     "Schema",
     "SchemaField",
+    "ConfigExporter",
+    "ConfigValidator",
+    "ValidationError",
+    "interpolate_config",
+    "ConfigAuditor",
     "Snapshot",
     "SnapshotStore",
-    "ValidationError",
-    "deep_merge",
-    "interpolate_config",
+    "ConfigRedactor",
+    "ConfigProfiler",
+    "ConfigRenderer",
+    "RenderError",
 ]
+
+__version__ = "0.6.0"
